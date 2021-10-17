@@ -25,11 +25,10 @@ export function configure(aurelia: Aurelia) {
     .standardConfiguration()
     .globalResources(PLATFORM.moduleName('shared/colour-names-value-converter'));
 
-  /*
+  
   if (environment.testing) {
     aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));
   }
-  */
 
   new HttpClient().configure(config => {
     const baseUrl = document.getElementsByTagName('base')[0].href;
