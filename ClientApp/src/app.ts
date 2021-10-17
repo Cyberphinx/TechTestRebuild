@@ -12,9 +12,7 @@ export class App {
     config.map([
       { route: '', redirect: '/people' },
       { route: 'people/:id', name: 'person', moduleId: PLATFORM.moduleName('people/edit/person-edit'), title: 'Person' },
-      //{ route: 'people/:id', name: 'person', moduleId: PLATFORM.moduleName('people/demo/demo'), title: 'Person' },
-      { route: 'people', name: 'people', moduleId: PLATFORM.moduleName('people/list/people-list'), title: 'People' },
-      { route: 'demo', name: 'demo', moduleId: PLATFORM.moduleName('people/demo/demo'), title: 'Demo' }
+      { route: 'people', name: 'people', moduleId: PLATFORM.moduleName('people/list/people-list'), title: 'People' }
     ]);
 
     this.router = router;

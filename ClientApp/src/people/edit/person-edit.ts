@@ -18,10 +18,10 @@ export class PersonEdit {
   async activate(params, routerConfig: RouteConfig) {
     this.routerConfig = routerConfig;
 
-    const personResponse = await this.http.fetch(`https://localhost:5001/api/people/${params.id}`);
+    const personResponse = await this.http.fetch(`/people/${params.id}`);
     this.personFetched(await personResponse.json());
 
-    const colourResponse = await this.http.fetch('https://localhost:5001/api/colours');
+    const colourResponse = await this.http.fetch('/colours');
     this.colourOptions = await colourResponse.json() as IColour[];
   }
 
@@ -44,7 +44,7 @@ export class PersonEdit {
     // this.person object. If the response is successful then
     // the user should be navigated to the list page.
 
-    return await this.http.fetch(`https://localhost:5001/api/people/${this.person.id}`, {
+    return await this.http.fetch(`/people/${this.person.id}`, {
       method: 'put',
       body: json(this.person)
     })

@@ -13,7 +13,7 @@ export class PeopleList {
   @bindable people: Person[] = [];
 
   async activate() {
-    const response = await this.http.fetch('https://localhost:5001/api/people');
+    const response = await this.http.fetch('/people');
     const people = await response.json();
 
     this.people = people.map((person: IPerson) => new Person(person));
